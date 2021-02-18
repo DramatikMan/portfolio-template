@@ -1,6 +1,6 @@
 portfolio template
 
-flask & deployment pracice
+flask & deployment practice
 
 running at:
 http://dramatikman.pythonanywhere.com/
