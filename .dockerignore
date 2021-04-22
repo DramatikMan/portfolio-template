@@ -10,7 +10,7 @@ htmlcov
 ### ~ Docker ~ ###
 .dockerignore
 Dockerfile
-compose.dev.yaml
-compose.test.yaml
-docker-compose.yaml
-stack.deploy.yaml
+compose.dev.yml
+compose.test.yml
+docker-compose.yml
+stack.deploy.yml
