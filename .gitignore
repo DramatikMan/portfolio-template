@@ -1,0 +1,5 @@
+secrets.env
+htmlcov
+compose.dev.yaml
+compose.test.yaml
+stack.deploy.yaml
