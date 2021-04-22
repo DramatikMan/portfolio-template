@@ -1,4 +1,1 @@
-<h1>Portfolio template</h1>
-
-Basic Flask usage & remote delpoyment practice.<br>
-Running at: http://dramatikman.pythonanywhere.com/
+<h1>Personal website core app</h1>
