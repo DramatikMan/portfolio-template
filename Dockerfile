@@ -7,7 +7,7 @@ RUN ./pipenv_install.sh
 
 FROM base AS development
 COPY . .
-CMD pipenv run devserver
+CMD ./devserver.sh
 
 #FROM base AS production
 #COPY core_app core_app
