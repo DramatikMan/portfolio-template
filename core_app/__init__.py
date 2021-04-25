@@ -1,17 +1,20 @@
 import os
 
-from flask import Flask, render_template
+from celery import Celery
 
 
-def create_app():
-    app = Flask(__name__)
+def make_celery():
+    celery = Celery(
+        __name__,
+        backend=os.environ['CELERY_RESULT_BACKEND'],
+        broker=os.environ['CELERY_BROKER_URL']
+    )
+    return celery
 
-    cfg = f"config.{os.environ.get('FLASK_ENV').capitalize()}Config"
-    app.config.from_object(cfg)
-    app.url_map.strict_slashes = False
 
-    @app.route('/')
-    def index():
-        return render_template('index.html')
+celery = make_celery()
 
-    return app
+
+@celery.task
+def log(msg):
+    return msg
