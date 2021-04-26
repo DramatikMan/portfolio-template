@@ -2,7 +2,7 @@ import os
 
 from flask import Flask, render_template
 
-from core_app import celery
+from . import celery
 from .celery_utils import init_celery
 
 
