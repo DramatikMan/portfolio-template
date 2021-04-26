@@ -19,4 +19,8 @@ def create_app():
     def index():
         return render_template('index.html')
 
+    @app.route('/contact', methods=['GET', 'POST'])
+    def contact():
+        return render_template('contact.html')
+
     return app
