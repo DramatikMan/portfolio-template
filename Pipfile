@@ -8,7 +8,6 @@ flask = "*"
 flask-wtf = "*"
 "wtforms[email]" = "*"
 "celery[redis]" = "*"
-aiosmtpd = "*"
 
 [dev-packages]
 pytest = "*"
