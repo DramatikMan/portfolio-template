@@ -18,18 +18,17 @@ celery = make_celery()
 
 
 @celery.task
-def log(msg):
-    return msg
+def send_email(address, text):
+    sender = os.environ['SMTP_SENDER']
+    pswd = os.environ['SMTP_PASSWORD']
 
-
-@celery.task
-def send_email(email, text):
     msg = EmailMessage()
     msg.set_content(text)
-    msg['Subject'] = 'Contact form message'
-    msg['From'] = email
+    msg['Subject'] = f'Message from {address}'
+    msg['From'] = sender
     msg['To'] = 'self@sergeypavlov.dev'
 
-    s = smtplib.SMTP('127.0.0.1', 8025)
+    s = smtplib.SMTP_SSL('smtp.yandex.com', 465)
+    s.login(sender, pswd)
     s.send_message(msg)
     s.quit()
