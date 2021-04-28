@@ -10,6 +10,11 @@
       {% if 'CSRF' not in (attr.label | string) %}
         {{ attr.label }}<br>
         {{ attr }}<br>
+        {% if attr.errors %}
+          {% for e in attr.errors %}
+            {{ e }}<br>
+          {% endfor %}
+        {% endif %}
       {% endif %}
       {% endfor %}
       <input type="submit" value="Submit">
