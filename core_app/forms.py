@@ -4,5 +4,5 @@ from wtforms.validators import DataRequired, Email, Length
 
 
 class MessageForm(FlaskForm):
-    email = StringField('Email', [DataRequired(), Email()])
-    message = TextAreaField('Message', [DataRequired()])
+    address = StringField('Your email', [DataRequired(), Email()])
+    text = TextAreaField('Your message', [DataRequired(), Length(min=10)])
