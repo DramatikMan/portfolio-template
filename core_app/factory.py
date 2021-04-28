@@ -1,9 +1,10 @@
 import os
 
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
 
-from . import celery
+from . import celery, send_email
 from .celery_utils import init_celery
+from .forms import MessageForm
 
 
 def create_app():
@@ -21,6 +22,12 @@ def create_app():
 
     @app.route('/contact', methods=['GET', 'POST'])
     def contact():
-        return render_template('contact.html')
+        form = MessageForm()
+
+        if form.validate_on_submit():
+            send_email(form.address.data, form.text.data)
+            return redirect(url_for('index'))
+
+        return render_template('contact.html', form=form)
 
     return app
