@@ -1,23 +1,19 @@
-<html>
-  <head>
-    <meta>
-    <title>Contact</title>
-  </head>
-  <body>
-    <form method="post">
-      {{ form.hidden_tag() }}
-      {% for attr in form %}
-      {% if 'CSRF' not in (attr.label | string) %}
-        {{ attr.label }}<br>
-        {{ attr }}<br>
-        {% if attr.errors %}
-          {% for e in attr.errors %}
-            {{ e }}<br>
-          {% endfor %}
-        {% endif %}
+{% extends 'base.html' %}
+{% block title %}Contact{% endblock %}
+{% block body %}
+  <form method="post">
+    {{ form.hidden_tag() }}
+    {% for attr in form %}
+    {% if 'CSRF' not in (attr.label | string) %}
+      {{ attr.label }}<br>
+      {{ attr }}<br>
+      {% if attr.errors %}
+        {% for e in attr.errors %}
+          {{ e }}<br>
+        {% endfor %}
       {% endif %}
-      {% endfor %}
-      <input type="submit" value="Submit">
-    </form>
-  </body>
-</html>
+    {% endif %}
+    {% endfor %}
+    <input type="submit" value="Submit">
+  </form>
+{% endblock %}
