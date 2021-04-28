@@ -5,10 +5,13 @@
   </head>
   <body>
     <form method="post">
-      <label for="email">Your email:</label><br>
-      <input type="email" id="email" value="email@email.com"><br>
-      <label for="message">Your message:</label><br>
-      <textarea id="message" value="your message">...</textarea><br>
+      {{ form.hidden_tag() }}
+      {% for attr in form %}
+      {% if 'CSRF' not in (attr.label | string) %}
+        {{ attr.label }}<br>
+        {{ attr }}<br>
+      {% endif %}
+      {% endfor %}
       <input type="submit" value="Submit">
     </form>
   </body>
