@@ -44,7 +44,7 @@ a {
 }
 
 .contact {
-  font-size: 2vmax;
+  font-size: min(2vmax, 2em);
   font-weight: bold;
 
   display: grid;
