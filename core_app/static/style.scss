@@ -1,4 +1,4 @@
-body{
+body {
   background-color: rgb(25, 25, 25);
   font-family: monospace;
   color: #fec356;
@@ -22,7 +22,7 @@ body{
   align-self: center;
 
   $sh-mult: 0.5vmax;
-  &:hover{
+  &:hover {
     box-shadow:
       inset 0 0 6*$sh-mult hsl(0, 0%, 96%),
       inset 2*$sh-mult 0 8*$sh-mult hsl(0, 100%, 50%),
