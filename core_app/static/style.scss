@@ -1,0 +1,45 @@
+body{
+  background-color: rgb(25, 25, 25);
+  font-family: monospace;
+  color: #fec356;
+
+  display: grid;
+  grid-auto-rows: 96vh;
+  justify-items: center;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 1vw;
+}
+
+.card {
+  background-color: #333;
+  font-size: 2vmax;
+
+  padding: 5vmax;
+  align-self: center;
+
+  $sh-mult: 0.5vmax;
+  &:hover{
+    box-shadow:
+      inset 0 0 6*$sh-mult hsl(0, 0%, 96%),
+      inset 2*$sh-mult 0 8*$sh-mult hsl(0, 100%, 50%),
+      inset -2*$sh-mult 0 8*$sh-mult hsl(55, 100%, 50%),
+      inset 2*$sh-mult 0 30*$sh-mult hsl(0, 100%, 50%),
+      inset -2*$sh-mult 0 30*$sh-mult hsl(55, 100%, 50%),
+      0 0 5*$sh-mult hsl(0, 0%, 100%),
+      -1*$sh-mult 0 8*$sh-mult hsl(0, 100%, 50%),
+      1*$sh-mult 0 8*$sh-mult hsl(55, 100%, 50%);
+    transition: .5s;
+  }
+}
+
+.contact {
+  font-size: 1.25vmax;
+
+  display: grid;
+  grid-auto-columns: minmax(50vmin, auto);
+  align-self: center;
+}
