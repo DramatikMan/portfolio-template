@@ -9,7 +9,7 @@ FROM base AS development
 COPY . .
 CMD ./devserver.sh
 
-#FROM base AS production
-#COPY core_app core_app
-#COPY config.py .
-#CMD ./deploy.sh
+FROM base AS production
+COPY core_app core_app
+COPY config.py .
+CMD ./deploy.sh
