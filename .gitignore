@@ -4,10 +4,6 @@ secrets.env
 ### ~ testing ~ ###
 htmlcov
 
-### ~ front-end ~ ###
-*.scss
-*.map
-
 ### ~ Docker ~ ###
 compose.dev.yml
 compose.test.yml
