@@ -8,6 +8,11 @@ body {
   justify-items: center;
 }
 
+a {
+  &:link { text-decoration: none; color: inherit; }
+  &:visited { text-decoration: none; color: inherit; }
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -39,7 +44,7 @@ body {
 }
 
 .contact {
-  font-size: 1.25vmax;
+  font-size: 2vmax;
   font-weight: bold;
 
   display: grid;
