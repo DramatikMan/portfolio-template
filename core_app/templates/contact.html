@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
-{% block title %}Contact{% endblock %}
+{% block title %}Contact Form{% endblock %}
 {% block body %}
-  <form method="post">
+  <form class="contact" method="post">
     {{ form.hidden_tag() }}
     {% for attr in form %}
     {% if 'CSRF' not in (attr.label | string) %}
-      {{ attr.label }}<br>
-      {{ attr }}<br>
+      {{ attr.label }}
+      {{ attr }}
       {% if attr.errors %}
         {% for e in attr.errors %}
-          {{ e }}<br>
+          {{ e }}
         {% endfor %}
       {% endif %}
     {% endif %}
