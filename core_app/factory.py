@@ -25,7 +25,7 @@ def create_app():
         form = MessageForm()
 
         if form.validate_on_submit():
-            send_email(form.address.data, form.text.data)
+            send_email.delay(form.address.data, form.text.data)
             return redirect(url_for('index'))
 
         return render_template('contact.html', form=form)
