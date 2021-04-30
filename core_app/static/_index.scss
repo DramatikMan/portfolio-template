@@ -1,0 +1,39 @@
+.cards {
+  display: grid;
+  grid-auto-rows: 90vh;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: 1vw;
+}
+
+.card {
+  padding: 3vmax;
+  align-self: center;
+
+  background-color: #333;
+  font-size: min(2vmax, 2em);
+  font-weight: bold;
+  text-align: center;
+
+  $sh-mult: 0.5vmax;
+  &:hover {
+    box-shadow:
+      inset 0 0 6*$sh-mult hsl(0, 0%, 96%),
+      inset 2*$sh-mult 0 8*$sh-mult hsl(0, 100%, 50%),
+      inset -2*$sh-mult 0 8*$sh-mult hsl(55, 100%, 50%),
+      inset 2*$sh-mult 0 30*$sh-mult hsl(0, 100%, 50%),
+      inset -2*$sh-mult 0 30*$sh-mult hsl(55, 100%, 50%),
+      0 0 5*$sh-mult hsl(0, 0%, 100%),
+      -1*$sh-mult 0 8*$sh-mult hsl(0, 100%, 50%),
+      1*$sh-mult 0 8*$sh-mult hsl(55, 100%, 50%);
+    transition: .5s;
+  }
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 1vw;
+
+  font-size: min(1.5vmax, 2em);
+  text-align: center;
+}

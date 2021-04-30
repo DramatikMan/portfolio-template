@@ -1,0 +1,13 @@
+body {
+  display: grid;
+  justify-items: center;
+
+  background-color: rgb(25, 25, 25);
+  font-family: monospace;
+  color: #fec356;
+}
+
+a {
+  &:link { text-decoration: none; color: inherit; }
+  &:visited { color: inherit; }
+}

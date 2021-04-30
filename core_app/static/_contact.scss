@@ -1,0 +1,20 @@
+.contact-wrapper {
+  display: grid;
+  grid-auto-rows: 45vh;
+}
+
+.back {
+  align-self: center;
+
+  text-align: center;
+  font-size: min(2vmax, 2em);
+}
+
+.contact-form {
+  display: grid;
+  grid-auto-columns: minmax(50vmin, auto);
+  align-self: start;
+
+  font-size: min(1.5vmax, 2em);
+  font-weight: bold;
+}
