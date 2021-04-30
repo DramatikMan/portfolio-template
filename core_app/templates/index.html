@@ -2,10 +2,29 @@
 {% block title %}Sergey Pavlov{% endblock %}
 {% block body %}
   <div class="cards">
-    <a class="card" href="/blog_app">/blog_app</a>
+    <a class="card" href="/blog_app" onmouseover="hover(' \
+        <span>❒ back-end ☛ Python (Flask)</span><br> \
+        <span>❒ front-end ☛ Jinja & Bootstrap</span><br> \
+        <span>❒ database ☛ PostgreSQL & SQLAlchemy</span><br> \
+        <span>❒ deployment ☛ Docker Swarm @ Ubuntu Server</span> \
+      ')" onmouseout="hover('')">
+      /blog_app
+    </a>
+  </div>
+  <div class="desc-row">
+    <div class="desc-content" id="content">
+    </div>
+  </div>
   </div>
   <div class="footer">
     <a href="https://github.com/DramatikMan">GitHub</a>
     <a href="/contact">Contact</a>
   </div>
+{% endblock %}
+{% block js %}
+  <script>
+      function hover(description) {
+          document.getElementById('content').innerHTML = description;
+      }
+  </script>
 {% endblock %}

@@ -1,21 +1,25 @@
 .cards {
   display: grid;
-  grid-auto-rows: 90vh;
+  grid-auto-rows: 45vh;
   grid-template-columns: repeat(1, 1fr);
   grid-column-gap: 1vw;
 }
 
 .card {
-  padding: 3vmax;
-  align-self: center;
+  display: grid;
+  align-self: end;
 
-  background-color: #333;
+  padding: 3vmax;
+
+  background-color: hsl(0, 0%, 20%);
   font-size: min(2vmax, 2em);
   font-weight: bold;
   text-align: center;
 
-  $sh-mult: 0.5vmax;
   &:hover {
+    transition: .5s;
+
+    $sh-mult: 0.5vmax;
     box-shadow:
       inset 0 0 6*$sh-mult hsl(0, 0%, 96%),
       inset 2*$sh-mult 0 8*$sh-mult hsl(0, 100%, 50%),
@@ -25,8 +29,21 @@
       0 0 5*$sh-mult hsl(0, 0%, 100%),
       -1*$sh-mult 0 8*$sh-mult hsl(0, 100%, 50%),
       1*$sh-mult 0 8*$sh-mult hsl(55, 100%, 50%);
-    transition: .5s;
   }
+}
+
+.desc-row {
+  display: grid;
+  grid-auto-rows: 45vh;
+}
+
+.desc-content {
+  display: grid;
+  align-self: center;
+  justify-self: left;
+
+  font-size: min(1.5vmax, 2em);
+  font-weight: bold;
 }
 
 .footer {
