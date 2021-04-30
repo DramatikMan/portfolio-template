@@ -1,0 +1,23 @@
+services:
+
+    web:
+
+      build:
+        args:
+          - build_env=production
+        context: .
+        target: production
+
+      env_file:
+        - secrets.env
+
+      environment:
+        # Flask config
+        FLASK_APP: core_app
+        FLASK_ENV: production
+
+      volumes:
+        - stream:/tmp/core_app
+
+volumes:
+  stream:
