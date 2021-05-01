@@ -17,17 +17,17 @@ jobs:
       - name: Get current latest image id
         run: >
           python3 -c
-          "import requests, json
-          url = 'https://api.github.com/user/packages/container/${{ github.event.repository.name }}/versions'
+          "import requests, json;
+          url = 'https://api.github.com/user/packages/container/${{ github.event.repository.name }}/versions';
           headers = dict(
               Authorization='token ${{ secrets.GHCR_PAT }}',
               Accept='application/vnd.github.v3+json'
-          )
-          resp = requests.get(url, headers=headers)
-          print(f'IMAGE_EXISTED={1 if resp.status_code == 200 else 0}')
+          );
+          resp = requests.get(url, headers=headers);
+          print(f'IMAGE_EXISTED={1 if resp.status_code == 200 else 0}');
           if resp.status_code == 200:
-              latest_id = resp.json()[0]['id']
-              print(f'LATEST_IMAGE_ID={latest_id}')"
+              latest_id = resp.json()[0]['id'];
+              print(f'LATEST_IMAGE_ID={latest_id}');"
           >> ${GITHUB_ENV}
 
       - name: Checkout
