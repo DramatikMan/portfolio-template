@@ -5,6 +5,5 @@ secrets.env
 htmlcov
 
 ### ~ Docker ~ ###
-compose.dev.yml
-compose.test.yml
-stack.deploy.yml
+/*.yml
+!/docker-compose.yml
