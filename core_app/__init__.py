@@ -8,7 +8,7 @@ from celery import Celery
 def make_celery():
     celery = Celery(
         __name__,
-        backend=os.environ['CELERY_RESULT_BACKEND'],
+        # backend=os.environ['CELERY_RESULT_BACKEND'],
         broker=os.environ['CELERY_BROKER_URL']
     )
     return celery

@@ -5,7 +5,7 @@ evs=(
 	SMTP_PASSWORD
 	SECRET_KEY
 	CELERY_BROKER_URL
-	CELERY_RESULT_BACKEND
+	# CELERY_RESULT_BACKEND
 )
 for variable in "${evs[@]}"; do
 	if [[ -z ${!variable+x} ]] || [[ -z ${!variable} ]] ; then

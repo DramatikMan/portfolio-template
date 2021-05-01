@@ -7,7 +7,8 @@ name = "pypi"
 flask = "*"
 flask-wtf = "*"
 "wtforms[email]" = "*"
-"celery[redis]" = "*"
+celery = "*"
+# "celery[redis]" = "*"
 
 [dev-packages]
 

@@ -23,9 +23,9 @@ services:
 
       image: rabbitmq
 
-    redis:
+    # redis:
+    #
+    #   image: redis:alpine
 
-      image: redis:alpine
-      
 volumes:
   stream:
