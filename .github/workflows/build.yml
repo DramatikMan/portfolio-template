@@ -25,9 +25,7 @@ jobs:
           );
           resp = requests.get(url, headers=headers);
           print(f'IMAGE_EXISTED={1 if resp.status_code == 200 else 0}');
-          if resp.status_code == 200:;
-              latest_id = resp.json()[0]['id'];
-              print(f'LATEST_IMAGE_ID={latest_id}');"
+          print(f'''LATEST_IMAGE_ID={resp.json()[0]['id'] if resp.status_code == 200 else None}''');"
           >> ${GITHUB_ENV}
 
       - name: Checkout
