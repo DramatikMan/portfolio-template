@@ -13,11 +13,19 @@ services:
 
       environment:
         # Flask config
-        FLASK_APP: core_app
+        FLASK_APP: core_app.factory
         FLASK_ENV: production
 
       volumes:
         - stream:/tmp/core_app
 
+    rabbitmq:
+
+      image: rabbitmq
+
+    redis:
+
+      image: redis:alpine
+      
 volumes:
   stream:
