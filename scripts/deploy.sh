@@ -23,5 +23,5 @@ bind="unix:/tmp/core_app/gunicorn.sock"
 wsgi_app="core_app.factory:create_app()"' > gunicorn.conf.py
 
 source .venv/bin/activate
-celery -A celery_runner.celery worker --detach
+pipenv run celery -A celery_runner.celery worker --detach
 gunicorn
