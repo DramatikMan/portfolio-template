@@ -5,8 +5,7 @@
 htmlcov
 
 ### ~ front-end ~ ###
-*.scss
-*.map
+**/*.scss
 
 ### ~ Docker ~ ###
 .dockerignore
