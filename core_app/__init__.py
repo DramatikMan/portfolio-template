@@ -17,7 +17,7 @@ def make_celery():
 celery = make_celery()
 
 
-@celery.task
+@celery.task(ignore_result=True)
 def send_email(address, text):
     sender = os.environ['SMTP_SENDER']
     pswd = os.environ['SMTP_PASSWORD']
