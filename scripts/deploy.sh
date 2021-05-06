@@ -19,7 +19,7 @@ pipenv install gunicorn
 
 echo $'
 workers=4
-bind="unix:/tmp/core_app/gunicorn.sock"
+bind="0.0.0.0:8000"
 wsgi_app="core_app.factory:create_app()"' > gunicorn.conf.py
 
 source .venv/bin/activate
