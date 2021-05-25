@@ -3,12 +3,20 @@
 {% block body %}
   <div class="cards">
     <a class="card" href="/blog_app" onmouseover="hover(' \
-        <span>❒ back-end ☛ Python (Flask)</span> \
-        <span>❒ front-end ☛ Jinja & Bootstrap</span> \
-        <span>❒ database ☛ PostgreSQL & SQLAlchemy</span> \
-        <span>❒ deployment ☛ local K3s cluster</span> \
-      ')" onmouseout="hover('')">
-      /blog_app
+      <span>❒ back-end ☛ Python (Flask)</span> \
+      <span>❒ front-end ☛ Jinja & Bootstrap</span> \
+      <span>❒ database ☛ PostgreSQL => SQLAlchemy</span> \
+      <span>❒ deployment ☛ local K3s cluster</span> \
+    ')" onmouseout="hover('')">
+      Blog App
+    </a>
+    <a class="card" href="/music_app" onmouseover="hover(' \
+      <span>❒ back-end ☛ Python (Django & DRF)</span> \
+      <span>❒ front-end ☛ React & Material-UI</span> \
+      <span>❒ database ☛ PostgreSQL => Django DB backend</span> \
+      <span>❒ deployment ☛ local K3s cluster</span> \
+    ')" onmouseout="hover('')">
+      Music App
     </a>
   </div>
   <div class="desc-row">
@@ -23,7 +31,7 @@
 {% endblock %}
 {% block js %}
   <script>
-      function hover(description) {
+      const hover = (description) => {
           document.getElementById('content').innerHTML = description;
       }
   </script>
